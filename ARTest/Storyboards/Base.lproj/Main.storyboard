@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vcr-rg-NKi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController storyboardIdentifier="ar_vc" id="BV1-FR-VrT" customClass="ARViewController" customModule="ARTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </arscnView>
+                    <connections>
+                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="231" y="34"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="yZC-mt-A6w">
+            <objects>
+                <viewController id="vcr-rg-NKi" customClass="MapViewController" customModule="ARTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nrS-A8-r8y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wkX-0y-OQI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GYg-ol-YH1">
+                                <rect key="frame" x="16" y="587" width="343" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Wr-EG-4xU">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="343" id="Hbz-vk-e15"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPB-82-eZ2">
+                                        <rect key="frame" x="147" y="30" width="49" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49" id="Wau-oe-bih"/>
+                                        </constraints>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitButtonPressed:" destination="vcr-rg-NKi" eventType="touchUpInside" id="3Jq-ez-G9h"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOh-Dw-Kd0">
+                                <rect key="frame" x="319" y="539" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="clR-HR-oTT"/>
+                                    <constraint firstAttribute="width" constant="40" id="whe-HE-9yv"/>
+                                </constraints>
+                                <state key="normal" image="location"/>
+                                <connections>
+                                    <action selector="currentLocation" destination="vcr-rg-NKi" eventType="touchUpInside" id="abD-cO-By8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wkX-0y-OQI" firstAttribute="trailing" secondItem="20O-ec-xBL" secondAttribute="trailing" id="3he-9a-rN0"/>
+                            <constraint firstItem="wkX-0y-OQI" firstAttribute="leading" secondItem="20O-ec-xBL" secondAttribute="leading" id="4FQ-2Q-hmq"/>
+                            <constraint firstItem="wkX-0y-OQI" firstAttribute="top" secondItem="nrS-A8-r8y" secondAttribute="top" id="f2l-Y8-xPq"/>
+                            <constraint firstItem="dOh-Dw-Kd0" firstAttribute="trailing" secondItem="GYg-ol-YH1" secondAttribute="trailing" id="hKH-wY-90L"/>
+                            <constraint firstItem="GYg-ol-YH1" firstAttribute="top" secondItem="20O-ec-xBL" secondAttribute="bottom" constant="-80" id="jE8-5L-xy4"/>
+                            <constraint firstItem="GYg-ol-YH1" firstAttribute="leading" secondItem="20O-ec-xBL" secondAttribute="trailing" constant="-359" id="suU-yH-oaK"/>
+                            <constraint firstItem="wkX-0y-OQI" firstAttribute="bottom" secondItem="20O-ec-xBL" secondAttribute="bottom" id="t7n-GQ-0cm"/>
+                            <constraint firstItem="GYg-ol-YH1" firstAttribute="top" secondItem="dOh-Dw-Kd0" secondAttribute="bottom" constant="8" id="xrC-nz-l2V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="20O-ec-xBL"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="wkX-0y-OQI" id="Zzt-T8-Llk"/>
+                        <outlet property="textFieldView" destination="4Wr-EG-4xU" id="y2j-Ne-KWF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="58F-Jm-7Dy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-394.39999999999998" y="33.733133433283363"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="location" width="64" height="64"/>
+    </resources>
+</document>
